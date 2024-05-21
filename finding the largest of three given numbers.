@@ -1,0 +1,19 @@
+def find_largest(a, b, c):
+    largest = a
+    if b > largest:
+        largest = b
+    if c > largest:
+        largest = c
+    return largest
+
+def main():
+    # Input three numbers separated by spaces
+    numbers = input("Enter three numbers separated by spaces: ")
+    a, b, c = map(int, numbers.split())
+
+    largest = find_largest(a, b, c)
+    print(largest)
+
+if __name__ == "__main__":
+    main()
++
