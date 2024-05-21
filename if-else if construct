@@ -1,0 +1,20 @@
+def is_insured(marital_status, gender, age):
+    if marital_status == 'M' or \
+       (marital_status == 'U' and gender == 'M' and age > 30) or \
+       (marital_status == 'U' and gender == 'F' and age > 25):
+        return True
+    else:
+        return False
+
+def main():
+    marital_status = input("Enter Marital Status (M/U): ").upper()
+    gender = input("Enter Gender (M/F): ").upper()
+    age = int(input("Enter Age: "))
+
+    if is_insured(marital_status, gender, age):
+        print("Driver is insured.")
+    else:
+        print("Driver is not insured.")
+
+if __name__ == "__main__":
+    main()
