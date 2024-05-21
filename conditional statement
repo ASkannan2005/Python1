@@ -1,0 +1,18 @@
+def is_rectangle_possible(a, b, c, d):
+    sides = [a, b, c, d]
+    sides.sort()
+    unique_sides = len(set(sides))
+    
+    # If there are exactly two unique side lengths, it's a rectangle
+    return unique_sides == 2
+
+def main():
+    sides = input("Enter rectangle four sides of length: ").split()
+    a, b, c, d = map(int, sides)
+    if is_rectangle_possible(a, b, c, d):
+        print("Yes")
+    else:
+        print("No")
+
+if __name__ == "__main__":
+    main()
