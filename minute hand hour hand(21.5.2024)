@@ -1,0 +1,33 @@
+def coincide_time_in_minutes(hours):
+    if hours < 0 or hours >= 12:
+        return "Invalid input"
+    
+    # Convert hours to minutes
+    total_minutes = hours * 60
+    
+    # Calculate the angle covered by hour hand in one hour
+    hour_hand_angle_per_minute = 360 / (12 * 60)
+    
+    # Calculate the angle covered by minute hand in one minute
+    minute_hand_angle_per_minute = 360 / 60
+    
+    # Find the time when the hour hand and minute hand coincide
+    while True:
+        hour_hand_angle = hour_hand_angle_per_minute * total_minutes
+        minute_hand_angle = minute_hand_angle_per_minute * total_minutes
+        
+        if abs(hour_hand_angle - minute_hand_angle) < 1:
+            return total_minutes
+        
+        total_minutes += 1
+
+def main():
+    try:
+        hours = int(input("Enter time in hours: "))
+        result = coincide_time_in_minutes(hours)
+        print(f"({result} / 11)")
+    except ValueError:
+        print("Invalid input")
+
+if __name__ == "__main__":
+    main()
