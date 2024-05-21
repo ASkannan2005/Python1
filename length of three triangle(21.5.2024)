@@ -1,0 +1,21 @@
+def is_valid_triangle(a, b, c):
+    # Check triangle inequality theorem
+    if a + b > c and a + c > b and b + c > a:
+        return True
+    else:
+        return False
+
+def main():
+    test_cases = [
+        (7, 10, 5),
+        (1, 10, 12)
+    ]
+
+    for idx, (a, b, c) in enumerate(test_cases, start=1):
+        if is_valid_triangle(a, b, c):
+            print(f"Test case {idx}: Valid triangle")
+        else:
+            print(f"Test case {idx}: Invalid triangle")
+
+if __name__ == "__main__":
+    main()
